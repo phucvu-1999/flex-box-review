@@ -24,7 +24,7 @@
     padding: 1rem;
     border-radius: 100px;
     width: 90%;
-    transition: all 0.5s linear;
+    transition: all 0.3s linear;
     margin-right: -3.25rem;
 
     &:focus {
@@ -72,6 +72,7 @@
   align-items: center;
 
   & > * {
+    transition: all 0.5s linear;
     padding: 0 2rem;
     cursor: pointer;
     height: 100%;
@@ -190,4 +191,126 @@
 }
 
 ///////////////////////////////////////////////////
-// LEGAL
+// HOTEL OVERVIEW
+.gallery {
+  display: flex;
+
+  &__item {
+    transition: all 0.3s linear;
+    flex: 1;
+    cursor: pointer;
+  }
+
+  &__item:hover {
+    transform: scale(1.2);
+  }
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
+}
+
+///////////////////////////////////////////////////
+// HOTEL OVERVIEW
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.1rem solid var(--color-grey-light-2);
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  &__icon-location {
+    margin-right: 0.5rem;
+  }
+
+  &__rating {
+    align-self: stretch;
+    padding: 0 2.25rem;
+    text-align: center;
+    background-color: var(--color-primary);
+    margin-left: 3rem;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-average {
+      font-size: 2.25rem;
+      font-weight: 300;
+      margin-bottom: -3px;
+    }
+
+    &-count {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+///////////////////////////////////////////////////
+// BTN INLINE
+.btn-inline {
+  border: none;
+  color: var(--color-primary);
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: transparent;
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.5);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
