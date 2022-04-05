@@ -203,6 +203,7 @@
 
   &__item:hover {
     transform: scale(1.2);
+    box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.5);
   }
 
   &__photo {
@@ -287,6 +288,15 @@
   display: inline-block;
   background-color: transparent;
   transition: all 0.2s;
+
+  & span {
+    margin-left: 3px;
+    transition: all 0.3s linear;
+  }
+
+  &:hover span {
+    margin-left: 8px;
+  }
 
   &:hover {
     color: var(--color-grey-dark-1);
@@ -377,5 +387,74 @@
     &:not(:last-child) {
       margin-right: -1.5rem;
     }
+  }
+}
+
+///////////////////////////////////////////////////
+// REVIEW
+
+.review {
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  transition: all 0.2s linear;
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+    z-index: 2;
+    margin-bottom: 2rem;
+    z-index: 10;
+    position: relative;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &-box {
+      flex: 1;
+    }
+
+    &-name {
+      font: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    &-date {
+      font-size: 1rem;
+      color: var(--color-grey-dark-3);
+    }
+  }
+
+  &__photo {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100px;
+    margin-right: 1.5rem;
+  }
+
+  &__rating {
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+
+  &::before {
+    content: "\201C";
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: -2.75rem;
+    left: 0;
+    line-height: 1;
+    font-size: 20rem;
+    color: var(--color-grey-light-4);
+    font-family: sans-serif;
+    z-index: 1;
   }
 }
